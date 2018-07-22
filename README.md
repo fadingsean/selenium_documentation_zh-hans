@@ -33,13 +33,13 @@
 ### 3.19 调试
 ## 4.Selenium WebDriver
 ### 4.1 WebDriver介绍
-Selenium 2.0的主要新功能是集成了WebDriver API。 除了解决Selenium-RC API中的一些限制之外，WebDriver还旨在提供更简单，更简洁的编程接口。 Selenium-WebDriver的开发是为了更好地支持动态网页，页面元素可能会在不重新加载页面的情况下发生变化。 WebDriver的目标是提供精心设计的面向对象的API，为现代高级Web应用程序测试问题提供改进的支持。
+Selenium 2.0的主要新功能是集成了WebDriver API。除了解决Selenium-RC API中的一些限制之外，WebDriver还旨在提供更简单，更简洁的编程接口。Selenium-WebDriver的开发是为了更好地支持动态网页，页面元素可能会在不重新加载页面的情况下发生变化。WebDriver的目标是提供精心设计的面向对象的API，为现代高级Web应用程序测试问题提供改进的支持。
 ### 4.2 与Selenium-RC相比，WebDriver如何“驱动”浏览器？
 Selenium-WebDriver使用每个浏览器自动化的本地支持直接调用浏览器。这些直接调用如何进行，以及它们支持的功能取决于你使用的浏览器。有关每个“浏览器驱动程序”的信息将在本章后面提供。
 
-对于熟悉Selenium-RC的人来说，这与你习惯的完全不同。 Selenium-RC以相同的方式为每个支持的浏览器工作。它在浏览器加载时将“javascript函数”注入浏览器，然后使用其javascript在浏览器中驱动AUT。WebDriver不使用此技术。同样，它使用浏览器内置的自动化支持直接驱动浏览器。
+对于熟悉Selenium-RC的人来说，这与你习惯的完全不同。Selenium-RC以相同的方式为每个支持的浏览器工作。它在浏览器加载时将“javascript函数”注入浏览器，然后使用其javascript在浏览器中驱动AUT。WebDriver不使用此技术。同样，它使用浏览器内置的自动化支持直接驱动浏览器。
 ### 4.3 WebDriver和Selenium-Server
-您可能需要也可能不需要Selenium Server，具体取决于您打算如何使用Selenium-WebDriver。如果您的浏览器和测试都在同一台机器上运行，并且您的测试只使用WebDriver API，那么您不需要运行Selenium-Server; WebDriver将直接运行浏览器。
+您可能不需要Selenium Server，具体取决于您打算如何使用Selenium-WebDriver。如果您的浏览器和测试都在同一台机器上运行，并且您的测试只使用WebDriver API，那么您不需要运行Selenium-Server; WebDriver将直接运行浏览器。
 
 有一些原因可以将Selenium-Server与Selenium-WebDriver一起使用。
 
@@ -51,6 +51,7 @@ Selenium-WebDriver使用每个浏览器自动化的本地支持直接调用浏�
 在此以Python为例。
 如果您使用Python进行自动化测试，那么您可能已经熟悉使用Python进行开发。 要将Selenium添加到Python环境，请从命令行运行以下命令。
 > pip install selenium
+
 Pip需要安装pip，pip也依赖于setuptools。
 教学Python开发本身超出了本文档的范围，但是Python上有许多资源，组织中的开发人员可能会帮助您加快速度。
 ### 4.5 从Selenium 1.0迁移(略)
@@ -311,8 +312,6 @@ driver.switch_to.window("windowName")
 ```html
 <a href="somewhere.html" target="windowName">Click here to open a new window</a>
 ```
-
-153/5000
 或者，您可以将“窗口句柄”传递给“switchTo().window()”方法。知道这一点，就可以迭代每个打开的窗口，如下所示：
 ```python
 for handle in driver.window_handles:
