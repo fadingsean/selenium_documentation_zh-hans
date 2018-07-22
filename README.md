@@ -235,7 +235,7 @@ driver.get("http://www.google.com")
         |HtmlUnitDriver|小写字母|与HTML出现的一致|是|
         |IE Driver|小写字母|与HTML出现的一致|否|
         |Firefox Driver|大小写不敏感|与HTML出现的一致|是|
-        
+
         这有点抽象，请看下列HTML：
         ```html
         <input type="text" name="example" />
@@ -258,6 +258,7 @@ driver.get("http://www.google.com")
 
         有时HTML元素不需要显式声明属性，因为它们将默认为已知值。 例如，“input”标记不需要“type”属性，因为它默认为“text”。 在WebDriver中使用xpath时的经验法则是，您不应期望能够匹配这些隐式属性。
   9. 使用JavaScript
+
         您可以执行任意javascript来查找元素，只要返回DOM元素，它就会自动转换为WebElement对象。
 
         加载jQuery的页面上的简单示例：
@@ -268,7 +269,7 @@ driver.get("http://www.google.com")
         ```python
         labels = driver.find_elements_by_tag_name("label")
         inputs = driver.execute_script(
-            "var labels = arguments[0], inputs = []; for (var i=0; i < labels.length; i++){" +            "inputs.push(document.getElementById(labels[i].getAttribute('for'))); } return inputs;", labels)
+            "var labels = arguments[0], inputs = []; for (var i=0; i < labels.length; i++){" + "inputs.push(document.getElementById(labels[i].getAttribute('for'))); } return inputs;", labels)
         ```
 - 获得文本值
 
@@ -327,7 +328,7 @@ driver.switch_to.frame("frameName")
 ```
 - 弹窗
 
-从Selenium 2.0 beta 1开始，内置支持处理弹出对话框。触发打开弹出窗口的操作后，您可以使用以下命令访问警报：
+从Selenium 2.0 beta 1开始，内置支持处理弹出对话框。触发打开弹出窗口的操作后，您可以使用以下命令访问alert：
 ```python
 alert = driver.switch_to.alert
 # usage: alert.dismiss(), etc.
@@ -401,7 +402,7 @@ driver = webdriver.Firefox(profile)
 ```
 - 拖拽操作
 
-这是使用Actions类执行拖放的示例。 需要启用本机事件。
+这是使用Actions类执行拖放的示例。需要启用本机事件。
 ```python
 from selenium.webdriver.common.action_chains import ActionChains
 element = driver.find_element_by_name("source")
