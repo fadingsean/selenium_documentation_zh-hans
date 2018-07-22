@@ -100,6 +100,7 @@ finally:
 在接下来的部分中，您将了解有关如何将WebDriver用于浏览器历史记录中向前和向后导航以及如何测试使用框架和窗口的网站等内容的更多信息。我们还提供了更全面的讨论和示例。
 ### 4.7 Selenium-WebDriver API命令和操作
 - 获取一个页面
+
 您可能想要使用WebDriver做的第一件事是导航到页面。 执行此操作的常规方法是调用“get”：
 ```Python
 driver.get("http://www.google.com")
@@ -234,6 +235,7 @@ driver.get("http://www.google.com")
         |HtmlUnitDriver|小写字母|与HTML出现的一致|是|
         |IE Driver|小写字母|与HTML出现的一致|否|
         |Firefox Driver|大小写不敏感|与HTML出现的一致|是|
+        
         这有点抽象，请看下列HTML：
         ```html
         <input type="text" name="example" />
@@ -248,10 +250,12 @@ driver.get("http://www.google.com")
         inputs = driver.find_elements(By.XPATH, "//input")
         ```
         我们将会找到以下匹配数字：
+
         |XPath表达式|HtmlUnitDriver|Firefox Driver|IE Driver|
         |-|-|-|-|
         |//input|1("example")|2|2|
         |//INPUT|0|2|0|
+
         有时HTML元素不需要显式声明属性，因为它们将默认为已知值。 例如，“input”标记不需要“type”属性，因为它默认为“text”。 在WebDriver中使用xpath时的经验法则是，您不应期望能够匹配这些隐式属性。
   9. 使用JavaScript
         您可以执行任意javascript来查找元素，只要返回DOM元素，它就会自动转换为WebElement对象。
